@@ -1,4 +1,7 @@
 def get_coin_combination(cents: int) -> list:
+    if cents < 0:
+        raise ValueError
+
     values = [1, 5, 10, 25]
     coins = [0, 0, 0, 0]
 
@@ -7,3 +10,7 @@ def get_coin_combination(cents: int) -> list:
         cents -= coins[i] * values[i]
 
     return coins
+
+
+if __name__ == "__main__":
+    print(get_coin_combination(24))
